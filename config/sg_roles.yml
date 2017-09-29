@@ -1,0 +1,22 @@
+#sg_all_access:
+#  cluster:
+#    - '*'
+#  indices:
+#    '*':
+#      '*':
+#        - '*'
+
+sg_role_both_perms:
+  cluster:
+    - cluster:monitor/health
+    - cluster:monitor/nodes/stats
+
+sg_role_first_perm:
+  cluster:
+    - cluster:monitor/health
+#    - cluster:monitor/nodes/stats
+
+sg_role_second_perm:
+  cluster:
+#    - cluster:monitor/health
+    - cluster:monitor/nodes/stats

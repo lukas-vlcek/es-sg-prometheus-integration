@@ -1,0 +1,16 @@
+sudo: required
+
+services:
+  - docker
+
+env:
+  - PROMETHEUS_PLUGIN=true
+#  - PROMETHEUS_PLUGIN=false
+
+script:
+  - docker build --build-arg PROMETHEUS_PLUGIN=${PROMETHEUS_PLUGIN} -t elasticsearch -f Dockerfile .
+  - CONT_ID=`docker run -d -p 9200:9200 elasticsearch`
+  - sleep 30 
+#  - docker exec ${CONT_ID} tail -n 30 /usr/share/java/elasticsearch/logs/elasticsearch.log
+  - ./test.sh
+  - docker exec ${CONT_ID} cat /usr/share/java/elasticsearch/logs/elasticsearch.log
