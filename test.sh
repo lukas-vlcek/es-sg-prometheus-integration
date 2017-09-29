@@ -12,7 +12,7 @@ testUser() {
 
 }
 
-testUser first_perm
-testUser second_perm
 testUser both_perms
+testUser second_perm
+testUser first_perm
 
