@@ -2,6 +2,10 @@
 #  users:
 #    - admin
 
+sg_role_prometheus_perm:
+  users:
+    - prometheus_perm
+
 sg_role_both_perms:
   users:
     - both_perms

@@ -26,7 +26,8 @@ ${HOME}/configure_sg.sh
 if [ "${PROMETHEUS_PLUGIN}" = "true" ]; then
 
   # Install Prometheus exporter plugin
-  ${ES_HOME}/bin/plugin install -b https://github.com/vvanholl/elasticsearch-prometheus-exporter/releases/download/${PROMETHEUS_EXPORTER_VER}/elasticsearch-prometheus-exporter-${PROMETHEUS_EXPORTER_VER}.zip
+  #${ES_HOME}/bin/plugin install -b https://github.com/vvanholl/elasticsearch-prometheus-exporter/releases/download/${PROMETHEUS_EXPORTER_VER}/elasticsearch-prometheus-exporter-${PROMETHEUS_EXPORTER_VER}.zip
+  ${ES_HOME}/bin/plugin install -b file:///${HOME}/elasticsearch-prometheus-exporter-1.0-SNAPSHOT.zip
 
 fi
 
